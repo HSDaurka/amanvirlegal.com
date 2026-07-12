@@ -3,322 +3,921 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanvir Gill | Legal Services & Notary Public</title>
+    <meta name="description" content="Amanvir Gill – Licensed Paralegal & Notary Public in Ontario. Expert legal representation for traffic tickets, CVOR violations, truck driver offences, impaired driving, and criminal charges across Ontario.">
+    <meta name="keywords" content="paralegal Ontario, traffic ticket lawyer, CVOR violations, truck driver traffic tickets, impaired driving defence, criminal charges Ontario, notary public Ontario, Amanvir Gill paralegal">
+    <meta name="author" content="Amanvir Gill Legal Services">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amanvir Gill | Licensed Paralegal & Notary Public – Ontario">
+    <meta property="og:description" content="Expert paralegal representation for traffic tickets, CVOR violations, impaired driving, and criminal charges across Ontario.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://www.amanvirlegal.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amanvir Gill | Licensed Paralegal & Notary Public">
+    <meta name="twitter:description" content="Traffic tickets, CVOR violations, impaired driving & criminal charge representation in Ontario.">
+
+    <link rel="canonical" href="https://www.amanvirlegal.com">
+
+    <title>Amanvir Gill | Licensed Paralegal & Notary Public – Traffic Tickets, CVOR & Criminal Defence Ontario</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Amanvir Gill Legal Services",
+      "description": "Licensed Paralegal and Notary Public in Ontario specialising in traffic tickets, CVOR violations, truck driver offences, impaired driving, and criminal charges.",
+      "url": "https://www.amanvirlegal.com",
+      "telephone": "+14165746441",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Ontario",
+        "addressCountry": "CA"
+      },
+      "areaServed": "Ontario",
+      "serviceType": ["Traffic Ticket Defence", "CVOR Violations", "Impaired Driving Defence", "Criminal Charges", "Notary Public"]
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.3);
+            --gold-light: #f0d060;
+            --gold-glow: rgba(212, 175, 55, 0.25);
             --dark-bg: #050505;
             --card-bg: #111111;
+            --card-hover: #161616;
             --text-light: #f4f4f4;
-            --text-muted: #b0b0b0;
+            --text-muted: #a0a0a0;
+            --section-alt: #080808;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes scaleIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from { transform: scale(0.85); opacity: 0; }
+            to   { transform: scale(1);    opacity: 1; }
+        }
+        @keyframes glowPulse {
+            0%, 100% { filter: drop-shadow(0 0 12px rgba(212,175,55,0.3)); }
+            50%       { filter: drop-shadow(0 0 28px rgba(212,175,55,0.6)); }
         }
 
-        /* Navigation */
+        /* NAV */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 8%;
+            padding: 1.6rem 8%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(5, 5, 5, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .logo-text {
             font-family: 'Playfair Display', serif;
             color: var(--gold);
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             text-decoration: none;
+            letter-spacing: 2px;
             font-weight: 700;
-            letter-spacing: 1px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
+            gap: 2.4rem;
         }
 
-        .nav-links li { margin-left: 2.5rem; }
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
+            letter-spacing: 1.8px;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
         }
-        .nav-links a:hover { color: var(--gold); }
 
-        /* Creative Hero Section */
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 5%;
-            background: radial-gradient(circle at center, #151515 0%, #050505 100%);
+            padding: 120px 5% 60px;
+            background: radial-gradient(ellipse at 50% 60%, #1a1500 0%, #050505 70%);
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 620px;
+            height: 620px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
         }
 
         .hero-logo {
-            width: 220px;
+            width: 210px;
             height: auto;
-            margin-bottom: 2rem;
-            animation: scaleIn 1.2s ease-out;
-            filter: drop-shadow(0 0 15px var(--gold-glow));
+            margin-bottom: 2.8rem;
+            animation: scaleIn 1.2s ease-out, glowPulse 4s ease-in-out 1.2s infinite;
         }
 
         .hero-welcome {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             color: var(--gold);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
             margin-bottom: 1rem;
-            animation: fadeIn 1s ease-out 0.5s both;
+            animation: fadeUp 1s ease-out 0.5s both;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            letter-spacing: 5px;
-            margin-bottom: 1rem;
-            animation: fadeIn 1s ease-out 0.8s both;
+            font-size: 3.9rem;
+            letter-spacing: 6px;
+            margin-bottom: 0.8rem;
+            animation: fadeUp 1s ease-out 0.8s both;
         }
 
-        .hero p {
-            max-width: 600px;
+        .hero-subtitle {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
+            font-size: 1rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 2.5rem;
-            animation: fadeIn 1s ease-out 1.1s both;
+            margin-bottom: 1.9rem;
+            animation: fadeUp 1s ease-out 1s both;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
+        .divider-gold {
+            width: 70px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 1.9rem;
+            animation: fadeUp 1s ease-out 1.1s both;
+        }
+
+        .hero-tagline {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2.6rem;
+            animation: fadeUp 1s ease-out 1.2s both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeUp 1s ease-out 1.4s both;
+        }
+
+        .btn-primary {
+            padding: 0.95rem 2.6rem;
+            background: var(--gold);
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            box-shadow: 0 0 25px var(--gold-glow);
+        }
+
+        .btn-outline {
+            padding: 0.95rem 2.6rem;
             border: 1px solid var(--gold);
             color: var(--gold);
             text-decoration: none;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 600;
-            transition: all 0.4s;
-            animation: fadeIn 1s ease-out 1.4s both;
+            font-size: 0.85rem;
+            transition: all 0.3s;
         }
-
-        .cta-button:hover {
+        .btn-outline:hover {
             background: var(--gold);
-            color: black;
-            box-shadow: 0 0 20px var(--gold-glow);
+            color: #000;
         }
 
-        /* Services */
-        .services { padding: 100px 10%; background: #080808; }
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        /* SERVICES */
+        section { padding: 100px 8%; }
+
+        .section-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.78rem;
+            margin-bottom: 0.6rem;
         }
-        .section-header h2 {
+        .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
+            margin-bottom: 1.2rem;
+        }
+        .section-sub {
+            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 3.5rem;
+        }
+        .centered { text-align: center; }
+        .centered .section-sub { margin-left: auto; margin-right: auto; }
+
+        /* TRAFFIC TICKETS */
+        .tickets-section { background: var(--section-alt); }
+
+        .tickets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ticket-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212,175,55,0.08);
+            padding: 2.5rem 2rem;
+            transition: all 0.35s;
+        }
+        .ticket-card:hover {
+            border-color: rgba(212,175,55,0.3);
+            background: var(--card-hover);
+            transform: translateY(-4px);
+        }
+
+        .ticket-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+        .ticket-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        .ticket-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .ticket-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .tag {
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.2);
+            color: var(--gold);
+            font-size: 0.72rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        /* CVOR */
+        .cvor-section {
+            background: linear-gradient(135deg, #0a0800 0%, #050505 100%);
+        }
+
+        .cvor-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .cvor-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+        }
+        .cvor-info p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
+        }
+
+        .cvor-checklist {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .cvor-checklist li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .cvor-checklist li::before {
+            content: '▸';
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cvor-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(212,175,55,0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+        .stat-box .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             color: var(--gold);
         }
+        .stat-box .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        /* CRIMINAL */
+        .criminal-section { background: var(--section-alt); }
+
+        .criminal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .criminal-card {
+            background: var(--card-bg);
+            border-left: 3px solid var(--gold);
+            padding: 2rem 2rem 2rem 2.5rem;
+            transition: all 0.3s;
+        }
+        .criminal-card:hover {
+            background: var(--card-hover);
+            transform: translateX(5px);
+        }
+        .criminal-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+        }
+        .criminal-card p { color: var(--text-muted); font-size: 0.92rem; }
+
+        /* SERVICES */
+        .services-overview { background: var(--dark-bg); }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
         }
 
         .service-card {
             background: var(--card-bg);
-            padding: 3.5rem 2rem;
-            border: 1px solid rgba(212, 175, 55, 0.05);
-            transition: all 0.3s;
+            padding: 2.8rem 2rem;
+            border: 1px solid rgba(212,175,55,0.07);
             text-align: center;
+            transition: all 0.3s;
         }
-
         .service-card:hover {
             border-color: var(--gold);
             transform: translateY(-5px);
         }
-
+        .service-card .s-icon { font-size: 2.4rem; margin-bottom: 1.2rem; }
         .service-card h3 {
             font-family: 'Playfair Display', serif;
             color: var(--gold);
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
         }
+        .service-card p { color: var(--text-muted); font-size: 0.93rem; }
 
-        /* Contact Section */
-        .contact { padding: 100px 10%; }
-        .contact-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4rem;
+        /* WHY US */
+        .why-section {
+            background: linear-gradient(135deg, #0d0a00 0%, #050505 100%);
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
+        .why-card {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .why-card .w-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .why-card h4 {
+            color: var(--gold);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+        .why-card p { color: var(--text-muted); font-size: 0.88rem; }
 
-        .contact-info { flex: 1; min-width: 300px; }
-        .contact-form { flex: 1.5; min-width: 300px; }
+        /* CONTACT */
+        .contact-section { background: var(--section-alt); }
 
-        .info-box {
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info .info-box {
             margin-bottom: 2rem;
             padding-left: 1rem;
             border-left: 2px solid var(--gold);
         }
-        .info-box h4 { color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;}
-        .info-box p { font-size: 1.2rem; }
-
-        input, textarea {
-            width: 100%;
-            padding: 1.2rem;
-            background: #151515;
-            border: 1px solid #333;
-            color: white;
-            margin-bottom: 1.5rem;
-            font-family: inherit;
-        }
-
-        button {
-            background: var(--gold);
-            border: none;
-            padding: 1.2rem 3rem;
-            font-weight: bold;
+        .info-box h4 {
+            color: var(--gold);
+            font-size: 0.75rem;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
+        }
+        .info-box p { font-size: 1.05rem; }
+        .info-box a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .info-box a:hover { color: var(--gold); }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 1.1rem 1.2rem;
+            background: #131313;
+            border: 1px solid #2a2a2a;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            transition: border 0.3s;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .contact-form button {
+            width: 100%;
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 1.2rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             cursor: pointer;
-            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .contact-form button:hover {
+            background: var(--gold-light);
+            box-shadow: 0 0 20px var(--gold-glow);
         }
 
+        /* FOOTER */
         footer {
-            text-align: center;
-            padding: 4rem 0;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            color: var(--text-muted);
-            font-size: 0.8rem;
+            background: #030303;
+            border-top: 1px solid rgba(212,175,55,0.1);
+            padding: 3rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
+        footer p { color: var(--text-muted); font-size: 0.78rem; }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--gold); }
 
+        @media (max-width: 900px) {
+            .cvor-layout,
+            .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+            .cvor-stats { grid-template-columns: 1fr 1fr; }
+        }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.4rem; }
             .nav-links { display: none; }
+            section { padding: 70px 5%; }
+            footer { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo-text">AMANVIR GILL</a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<!-- NAV -->
+<nav aria-label="Main Navigation">
+    <a href="#home" class="logo-text">AMANVIR GILL</a>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#traffic-tickets">Traffic Tickets</a></li>
+        <li><a href="#cvor">CVOR</a></li>
+        <li><a href="#criminal">Criminal</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary" style="padding:0.65rem 1.6rem; font-size:0.75rem;">Book Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Hero">
+    <img src="logo.png" alt="Amanvir Gill Legal Services Logo" class="hero-logo" width="210" height="210">
+
+    <p class="hero-welcome">Welcome to Professional Legal Advocacy</p>
+    <h1>AMANVIR GILL</h1>
+    <p class="hero-subtitle">Licensed Paralegal & Notary Public — Ontario</p>
+    <div class="divider-gold" aria-hidden="true"></div>
+    <p class="hero-tagline">Advocacy • Integrity • Results</p>
+
+    <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <a href="#traffic-tickets" class="btn-outline">Explore Services</a>
+    </div>
+</section>
+
+<!-- TRAFFIC TICKETS -->
+<section class="tickets-section" id="traffic-tickets" aria-labelledby="tickets-heading">
+    <div class="centered">
+        <p class="section-label">Don't Pay That Fine</p>
+        <h2 class="section-title" id="tickets-heading">Traffic Ticket Defence</h2>
+        <p class="section-sub">Don't just pay your ticket — that's an admission of guilt. Let us fight to reduce or eliminate the charge, protect your driving record, and keep your insurance rates from skyrocketing.</p>
+    </div>
+
+    <div class="tickets-grid">
+        <article class="ticket-card">
+            <div class="ticket-icon">🚗</div>
+            <h3>Speeding Tickets</h3>
+            <p>Challenging radar and laser evidence, officer calibration records, and road signage disputes to reduce or dismiss your fine and demerit points.</p>
+            <div class="ticket-tags">
+                <span class="tag">Photo Radar</span>
+                <span class="tag">Highway Speeding</span>
+                <span class="tag">School Zones</span>
+            </div>
+        </article>
+
+        <article class="ticket-card">
+            <div class="ticket-icon">🚦</div>
+            <h3>Red Light & Stop Sign</h3>
+            <p>Fighting red light camera tickets and disputed stop sign violations with thorough evidence review and procedural defence strategies.</p>
+            <div class="ticket-tags">
+                <span class="tag">Red Light Camera</span>
+                <span class="tag">Fail to Stop</span>
+                <span class="tag">Rolling Stops</span>
+            </div>
+        </article>
+
+        <article class="ticket-card">
+            <div class="ticket-icon">📱</div>
+            <h3>Distracted Driving</h3>
+            <p>Contesting handheld device charges where officer observation is subjective, reducing the heavy fines and licence suspensions that accompany these offences.</p>
+            <div class="ticket-tags">
+                <span class="tag">Cellphone Use</span>
+                <span class="tag">Hand-Held Device</span>
+                <span class="tag">GPS Disputes</span>
+            </div>
+        </article>
+
+        <article class="ticket-card">
+            <div class="ticket-icon">⚡</div>
+            <h3>Stunt Driving & Racing</h3>
+            <p>Stunt driving charges carry immediate vehicle impoundment and licence suspension. Aggressive legal representation is essential — contact us immediately.</p>
+            <div class="ticket-tags">
+                <span class="tag">Licence Suspension</span>
+                <span class="tag">Impoundment</span>
+                <span class="tag">50+ km/h Over</span>
+            </div>
+        </article>
+
+        <article class="ticket-card">
+            <div class="ticket-icon">🛣️</div>
+            <h3>Careless & Dangerous Driving</h3>
+            <p>Serious HTA offences with major demerit points and insurance consequences. We build a strong factual and legal defence tailored to your circumstances.</p>
+            <div class="ticket-tags">
+                <span class="tag">Careless Driving</span>
+                <span class="tag">Dangerous Driving</span>
+                <span class="tag">Follow Too Closely</span>
+            </div>
+        </article>
+
+        <article class="ticket-card">
+            <div class="ticket-icon">📋</div>
+            <h3>Insurance & Licence Offences</h3>
+            <p>Representing clients charged with driving without insurance, suspended licence, or failing to surrender documents — protecting your freedom to drive.</p>
+            <div class="ticket-tags">
+                <span class="tag">No Insurance</span>
+                <span class="tag">Suspended Licence</span>
+                <span class="tag">No Surrender</span>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- CVOR -->
+<section class="cvor-section" id="cvor" aria-labelledby="cvor-heading">
+    <div class="cvor-layout">
+        <div class="cvor-info">
+            <p class="section-label">Commercial Vehicle Operators</p>
+            <h2 id="cvor-heading">CVOR Violations & Truck Driver Offences</h2>
+            <p>Your Commercial Vehicle Operator's Registration (CVOR) is the lifeline of your trucking career or business. A single violation can trigger MTO audits, safety rating deterioration, or complete licence cancellation. We understand the stakes.</p>
+            <p>Whether you are an owner-operator, fleet manager, or long-haul driver, we provide aggressive representation to protect your CVOR record and keep your business on the road.</p>
+
+            <ul class="cvor-checklist" aria-label="CVOR Violations We Handle">
+                <li>Hours of Service (HOS) violations & logbook offences</li>
+                <li>Overweight & over-dimension infractions</li>
+                <li>Unsafe vehicle & equipment violations (brakes, lights, tires)</li>
+                <li>Failure to inspect / inspection certificate offences</li>
+                <li>Dangerous goods & load securement violations</li>
+                <li>MTO roadside inspection failures</li>
+                <li>CVOR point accumulation & facility audits</li>
+                <li>Speeding in a commercial vehicle</li>
+                <li>Following too closely (tailgating) in a CMV</li>
+                <li>Failure to stop at weigh scales</li>
+                <li>Driver's abstract & carrier profile reviews</li>
+                <li>CVOR licence reinstatement hearings</li>
+            </ul>
+        </div>
+
+        <div class="cvor-right">
+            <div class="cvor-stats">
+                <div class="stat-box">
+                    <div class="number">34</div>
+                    <div class="label">CVOR Points Can Mean Cancellation</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">ON</div>
+                    <div class="label">Province Wide Coverage</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">100%</div>
+                    <div class="label">Dedicated Representation</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">24/7</div>
+                    <div class="label">Urgent Case Support</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; background: var(--card-bg); border: 1px solid rgba(212,175,55,0.12); padding: 2rem;">
+                <h3 style="font-family:'Playfair Display',serif; color:var(--gold); margin-bottom:1rem;">⚠️ Don't Ignore a CVOR Violation</h3>
+                <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;">Each CVOR conviction adds points to your carrier profile. When your points reach critical thresholds, the MTO can downgrade your safety rating, issue a warning letter, require a facility audit, or cancel your CVOR altogether.</p>
+                <a href="#contact" class="btn-primary" style="display:inline-block;">Speak to Us Today</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CRIMINAL -->
+<section class="criminal-section" id="criminal" aria-labelledby="criminal-heading">
+    <div class="centered">
+        <p class="section-label">Criminal Code Defence</p>
+        <h2 class="section-title" id="criminal-heading">Criminal & Serious Driving Offences</h2>
+        <p class="section-sub">Criminal charges arising from driving incidents carry life-changing consequences including criminal records, licence suspension, and potential incarceration. Time is critical — contact us immediately.</p>
+    </div>
+
+    <div class="criminal-grid">
+        <article class="criminal-card">
+            <h3>🍺 Impaired Driving (DUI / Over 80)</h3>
+            <p>Being charged with impaired driving or operating a vehicle with a blood alcohol concentration over 80mg is a serious Criminal Code offence. We challenge breathalyzer accuracy, officer conduct, Charter rights violations, and Approved Instrument calibration to build a rigorous defence.</p>
+        </article>
+
+        <article class="criminal-card">
+            <h3>🚫 Refusing a Breathalyzer</h3>
+            <p>Refusal to provide a breath sample carries the same penalties as a DUI conviction. We analyse the lawfulness of the demand, your right to counsel, and procedural compliance to challenge the charge effectively.</p>
+        </article>
+
+        <article class="criminal-card">
+            <h3>💨 Drug-Impaired Driving</h3>
+            <p>Cannabis and drug-impaired driving charges rely on Drug Recognition Expert (DRE) evaluations and oral fluid samples. We scrutinize evaluation procedures, chain of custody, and officer training to defend your rights.</p>
+        </article>
+
+        <article class="criminal-card">
+            <h3>💥 Dangerous Operation of a Vehicle</h3>
+            <p>A Criminal Code offence far more serious than careless driving, dangerous operation charges require an aggressive defence examining the standard of driving, road conditions, and witness credibility.</p>
+        </article>
+
+        <article class="criminal-card">
+            <h3>🚑 Failure to Stop at an Accident</h3>
+            <p>Leaving the scene of a collision involving injury or death is a Criminal Code offence. We assess the evidence, your awareness of the accident, and any applicable Charter defences to protect your rights.</p>
+        </article>
+
+        <article class="criminal-card">
+            <h3>⚠️ Criminal Negligence Causing Harm</h3>
+            <p>Among the most serious driving-related Criminal Code charges, we provide comprehensive defence representation examining every aspect of the Crown's case including expert evidence and causation arguments.</p>
+        </article>
+    </div>
+
+    <div style="margin-top:3rem; background:var(--card-bg); border:1px solid rgba(212,175,55,0.15); padding:2.5rem; text-align:center;">
+        <p style="color:var(--gold); font-family:'Playfair Display',serif; font-size:1.3rem; margin-bottom:0.8rem;">Your Rights Matter. Act Immediately.</p>
+        <p style="color:var(--text-muted); max-width:600px; margin:0 auto 2rem;">Criminal charges do not wait. Every day counts when it comes to preserving evidence, filing motions, and protecting your future. Call us now for a confidential consultation.</p>
+        <a href="tel:+14165746441" class="btn-primary">📞 Call Now: (416) 574-6441</a>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-overview" id="services" aria-labelledby="services-heading">
+    <div class="centered">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title" id="services-heading">All Legal Services</h2>
+        <p class="section-sub">A full suite of paralegal and notary services designed to protect your rights and deliver results.</p>
+    </div>
+
+    <div class="services-grid">
+        <article class="service-card">
+            <div class="s-icon">⚖️</div>
+            <h3>Legal Advocacy</h3>
+            <p>Strategic representation at Ontario Courts and administrative tribunals with a focus on achieving optimal outcomes.</p>
+        </article>
+        <article class="service-card">
+            <div class="s-icon">📜</div>
+            <h3>Notary Public</h3>
+            <p>Official notarization of documents, affidavits, statutory declarations, and commissioning of oaths across Ontario.</p>
+        </article>
+        <article class="service-card">
+            <div class="s-icon">📬</div>
+            <h3>Process Serving</h3>
+            <p>Reliable and timely service of legal documents with sworn affidavits of service for court filing purposes.</p>
+        </article>
+        <article class="service-card">
+            <div class="s-icon">🏛️</div>
+            <h3>Tribunal Representation</h3>
+            <p>Experienced advocacy before the Licence Appeal Tribunal (LAT), FSCO, and other Ontario regulatory bodies.</p>
+        </article>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" aria-labelledby="why-heading">
+    <div class="centered">
+        <p class="section-label">Why Choose Us</p>
+        <h2 class="section-title" id="why-heading">The Amanvir Gill Advantage</h2>
+    </div>
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="w-icon">🎯</div>
+            <h4>Focused Expertise</h4>
+            <p>Dedicated focus on traffic, CVOR, and criminal driving matters means deeper knowledge and sharper strategies.</p>
+        </div>
+        <div class="why-card">
+            <div class="w-icon">💬</div>
+            <h4>Clear Communication</h4>
+            <p>You are kept informed every step of the way — no confusing jargon, no surprises.</p>
+        </div>
+        <div class="why-card">
+            <div class="w-icon">⚡</div>
+            <h4>Fast Response</h4>
+            <p>We understand urgency. Expect a prompt response and immediate action on time-sensitive matters.</p>
+        </div>
+        <div class="why-card">
+            <div class="w-icon">💰</div>
+            <h4>Affordable Fees</h4>
+            <p>Quality legal representation should be accessible. We offer transparent, competitive pricing with no hidden costs.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="centered" style="margin-bottom:3rem;">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title" id="contact-heading">Book Your Consultation</h2>
+        <p class="section-sub">Whether you have received a ticket or are facing serious charges, reach out today. The sooner you act, the stronger your defence.</p>
+    </div>
+
+    <div class="contact-layout">
+        <div class="contact-info">
+            <div class="info-box">
+                <h4>📞 Phone</h4>
+                <p><a href="tel:+14165746441">+1 (416) 574-6441</a></p>
+            </div>
+            <div class="info-box">
+                <h4>✉️ Email</h4>
+                <p><a href="mailto:info@amanvirlegal.com">info@amanvirlegal.com</a></p>
+            </div>
+            <div class="info-box">
+                <h4>📍 Area Served</h4>
+                <p>All of Ontario, Canada</p>
+            </div>
+            <div class="info-box">
+                <h4>🕐 Hours</h4>
+                <p>Monday – Saturday: 9AM – 7PM</p>
+            </div>
+            <div class="info-box">
+                <h4>⚖️ Credentials</h4>
+                <p>Licensed Paralegal & Notary Public, Province of Ontario</p>
+            </div>
+        </div>
+
+        <form class="contact-form" action="#" method="post" aria-label="Contact Form">
+            <input type="text" name="fullname" placeholder="Full Name" required aria-label="Full Name">
+            <input type="email" name="email" placeholder="Email Address" required aria-label="Email Address">
+            <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone Number">
+            <select name="service" aria-label="Service Required">
+                <option value="" disabled selected>Select Service Required</option>
+                <option value="traffic-ticket">Traffic Ticket</option>
+                <option value="cvor">CVOR Violation</option>
+                <option value="impaired">Impaired Driving / DUI</option>
+                <option value="criminal">Other Criminal Charge</option>
+                <option value="notary">Notary Public</option>
+                <option value="other">Other / Not Sure</option>
+            </select>
+            <textarea name="message" rows="5" placeholder="Briefly describe your situation..." aria-label="Message"></textarea>
+            <button type="submit">Send Consultation Request</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-brand">AMANVIR GILL</div>
+    <p>© 2024 Amanvir Gill Legal Services. All Rights Reserved. | Licensed Paralegal & Notary Public, Ontario</p>
+    <nav class="footer-links" aria-label="Footer Navigation">
+        <a href="#home">Home</a>
+        <a href="#traffic-tickets">Traffic</a>
+        <a href="#cvor">CVOR</a>
+        <a href="#criminal">Criminal</a>
+        <a href="#contact">Contact</a>
     </nav>
-
-    <section class="hero" id="home">
-        <!-- Replace 'logo.png' with your actual image file name -->
-        <img src="logo.png" alt="Legal Scales Logo" class="hero-logo">
-        
-        <div class="hero-welcome">Welcome to Professional Advocacy</div>
-        <h1>AMANVIR GILL</h1>
-        <p>Licensed Paralegal & Notary Public | Ontario</p>
-        
-        <a href="#contact" class="cta-button">Book a Consultation</a>
-    </section>
-
-    <section class="services" id="services">
-        <div class="section-header">
-            <h2>Legal Expertise</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Legal Advocacy</h3>
-                <p>Strategic representation across Ontario Courts and Tribunals, ensuring your voice is heard and your rights protected.</p>
-            </div>
-            <div class="service-card">
-                <h3>Notary Public</h3>
-                <p>Swift and official notarization of documents, affidavits, and statutory declarations with legal precision.</p>
-            </div>
-            <div class="service-card">
-                <h3>Support Services</h3>
-                <p>Comprehensive process serving and legal documentation support tailored for clients across the province.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="section-header">
-            <h2>Connect With Us</h2>
-        </div>
-        <div class="contact-flex">
-            <div class="contact-info">
-                <div class="info-box">
-                    <h4>Direct Contact</h4>
-                    <p>+1 (416) 574-6441</p>
-                </div>
-                <div class="info-box">
-                    <h4>Email</h4>
-                    <p>info@amanvirlegal.com</p>
-                </div>
-                <div class="info-box">
-                    <h4>Location</h4>
-                    <p>Ontario Wide Services</p>
-                </div>
-                <div class="info-box">
-                    <h4>Philosophy</h4>
-                    <p>Advocacy • Integrity • Results</p>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <textarea rows="4" placeholder="Briefly describe your legal inquiry..."></textarea>
-                    <button type="submit">Send Inquiry</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2024 AMANVIR GILL LEGAL SERVICES. ALL RIGHTS RESERVED.
-    </footer>
+</footer>
 
 </body>
 </html>
