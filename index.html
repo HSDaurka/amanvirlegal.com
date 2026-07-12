@@ -40,16 +40,16 @@
     }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --gold: #d4af37;
             --gold-light: #f0d060;
-            --gold-glow: rgba(212, 175, 55, 0.25);
+            --gold-glow: rgba(212, 175, 55, 0.3);
             --dark-bg: #050505;
             --card-bg: #111111;
-            --card-hover: #161616;
+            --card-hover: #1a1a1a;
             --text-light: #f4f4f4;
             --text-muted: #a0a0a0;
             --section-alt: #080808;
@@ -80,12 +80,12 @@
             50%       { filter: drop-shadow(0 0 28px rgba(212,175,55,0.6)); }
         }
 
-        /* NAV */
+        /* ── REDESIGNED HEADER ── */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.6rem 8%;
+            padding: 0.9rem 6%;
             position: fixed;
             width: 100%;
             top: 0;
@@ -93,54 +93,90 @@
             background: rgba(5, 5, 5, 0.92);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            min-height: 72px;
         }
 
-        .logo-text {
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            object-fit: contain;
+            background: rgba(212, 175, 55, 0.05);
+            padding: 3px;
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .nav-brand-name {
             font-family: 'Playfair Display', serif;
             color: var(--gold);
-            font-size: 1.35rem;
-            text-decoration: none;
+            font-size: 1.05rem;
             letter-spacing: 2px;
             font-weight: 700;
         }
 
+        .nav-brand-title {
+            font-size: 0.55rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+
         .nav-links {
             display: flex;
+            align-items: center;
             list-style: none;
-            gap: 2.4rem;
+            gap: 0.4rem;
         }
 
-        .nav-links a {
+        .nav-links li a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             text-transform: uppercase;
             letter-spacing: 1.8px;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
             position: relative;
-            padding-bottom: 4px;
-            transition: color 0.3s ease;
         }
 
-        .nav-links a:hover {
+        .nav-links li a:hover {
             color: var(--gold);
+            background: rgba(212, 175, 55, 0.06);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.4s ease;
+        /* Contact button — highly visible */
+        .nav-cta {
+            background: var(--gold) !important;
+            color: #000 !important;
+            font-weight: 700 !important;
+            padding: 0.6rem 1.6rem !important;
+            letter-spacing: 1.5px !important;
+            margin-left: 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease !important;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+            box-shadow: 0 0 25px var(--gold-glow) !important;
+            transform: translateY(-1px);
         }
 
-        /* HERO */
+        /* ── HERO ── */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -258,7 +294,7 @@
             color: #000;
         }
 
-        /* SERVICES */
+        /* SECTIONS */
         section { padding: 100px 8%; }
 
         .section-label {
@@ -281,7 +317,7 @@
         .centered { text-align: center; }
         .centered .section-sub { margin-left: auto; margin-right: auto; }
 
-        /* TRAFFIC TICKETS */
+        /* TRAFFIC */
         .tickets-section { background: var(--section-alt); }
 
         .tickets-grid {
@@ -575,6 +611,7 @@
             .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
             .cvor-stats { grid-template-columns: 1fr 1fr; }
         }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.4rem; }
             .nav-links { display: none; }
@@ -585,21 +622,27 @@
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ══════════════════ REDESIGNED HEADER ══════════════════ -->
 <nav aria-label="Main Navigation">
-    <a href="#home" class="logo-text">AMANVIR GILL</a>
+    <a href="#home" class="nav-brand">
+        <img src="logo.png" alt="Amanvir Gill Logo" class="nav-logo" width="42" height="42">
+        <div class="nav-brand-text">
+            <span class="nav-brand-name">AMANVIR GILL</span>
+            <span class="nav-brand-title">Licensed Paralegal & Notary Public</span>
+        </div>
+    </a>
+
     <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#traffic-tickets">Traffic Tickets</a></li>
+        <li><a href="#traffic-tickets">Traffic</a></li>
         <li><a href="#cvor">CVOR</a></li>
         <li><a href="#criminal">Criminal</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
     </ul>
-    <a href="#contact" class="btn-primary" style="padding:0.65rem 1.6rem; font-size:0.75rem;">Book Consultation</a>
 </nav>
 
-<!-- HERO -->
+<!-- ══════════════════ HERO ══════════════════ -->
 <section class="hero" id="home" aria-label="Hero">
     <img src="logo.png" alt="Amanvir Gill Legal Services Logo" class="hero-logo" width="210" height="210">
 
@@ -615,7 +658,7 @@
     </div>
 </section>
 
-<!-- TRAFFIC TICKETS -->
+<!-- ══════════════════ TRAFFIC TICKETS ══════════════════ -->
 <section class="tickets-section" id="traffic-tickets" aria-labelledby="tickets-heading">
     <div class="centered">
         <p class="section-label">Don't Pay That Fine</p>
@@ -692,7 +735,7 @@
     </div>
 </section>
 
-<!-- CVOR -->
+<!-- ══════════════════ CVOR ══════════════════ -->
 <section class="cvor-section" id="cvor" aria-labelledby="cvor-heading">
     <div class="cvor-layout">
         <div class="cvor-info">
@@ -746,7 +789,7 @@
     </div>
 </section>
 
-<!-- CRIMINAL -->
+<!-- ══════════════════ CRIMINAL ══════════════════ -->
 <section class="criminal-section" id="criminal" aria-labelledby="criminal-heading">
     <div class="centered">
         <p class="section-label">Criminal Code Defence</p>
@@ -793,131 +836,4 @@
     </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services-overview" id="services" aria-labelledby="services-heading">
-    <div class="centered">
-        <p class="section-label">What We Offer</p>
-        <h2 class="section-title" id="services-heading">All Legal Services</h2>
-        <p class="section-sub">A full suite of paralegal and notary services designed to protect your rights and deliver results.</p>
-    </div>
-
-    <div class="services-grid">
-        <article class="service-card">
-            <div class="s-icon">⚖️</div>
-            <h3>Legal Advocacy</h3>
-            <p>Strategic representation at Ontario Courts and administrative tribunals with a focus on achieving optimal outcomes.</p>
-        </article>
-        <article class="service-card">
-            <div class="s-icon">📜</div>
-            <h3>Notary Public</h3>
-            <p>Official notarization of documents, affidavits, statutory declarations, and commissioning of oaths across Ontario.</p>
-        </article>
-        <article class="service-card">
-            <div class="s-icon">📬</div>
-            <h3>Process Serving</h3>
-            <p>Reliable and timely service of legal documents with sworn affidavits of service for court filing purposes.</p>
-        </article>
-        <article class="service-card">
-            <div class="s-icon">🏛️</div>
-            <h3>Tribunal Representation</h3>
-            <p>Experienced advocacy before the Licence Appeal Tribunal (LAT), FSCO, and other Ontario regulatory bodies.</p>
-        </article>
-    </div>
-</section>
-
-<!-- WHY US -->
-<section class="why-section" aria-labelledby="why-heading">
-    <div class="centered">
-        <p class="section-label">Why Choose Us</p>
-        <h2 class="section-title" id="why-heading">The Amanvir Gill Advantage</h2>
-    </div>
-    <div class="why-grid">
-        <div class="why-card">
-            <div class="w-icon">🎯</div>
-            <h4>Focused Expertise</h4>
-            <p>Dedicated focus on traffic, CVOR, and criminal driving matters means deeper knowledge and sharper strategies.</p>
-        </div>
-        <div class="why-card">
-            <div class="w-icon">💬</div>
-            <h4>Clear Communication</h4>
-            <p>You are kept informed every step of the way — no confusing jargon, no surprises.</p>
-        </div>
-        <div class="why-card">
-            <div class="w-icon">⚡</div>
-            <h4>Fast Response</h4>
-            <p>We understand urgency. Expect a prompt response and immediate action on time-sensitive matters.</p>
-        </div>
-        <div class="why-card">
-            <div class="w-icon">💰</div>
-            <h4>Affordable Fees</h4>
-            <p>Quality legal representation should be accessible. We offer transparent, competitive pricing with no hidden costs.</p>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact" aria-labelledby="contact-heading">
-    <div class="centered" style="margin-bottom:3rem;">
-        <p class="section-label">Get In Touch</p>
-        <h2 class="section-title" id="contact-heading">Book Your Consultation</h2>
-        <p class="section-sub">Whether you have received a ticket or are facing serious charges, reach out today. The sooner you act, the stronger your defence.</p>
-    </div>
-
-    <div class="contact-layout">
-        <div class="contact-info">
-            <div class="info-box">
-                <h4>📞 Phone</h4>
-                <p><a href="tel:+14165746441">+1 (416) 574-6441</a></p>
-            </div>
-            <div class="info-box">
-                <h4>✉️ Email</h4>
-                <p><a href="mailto:info@amanvirlegal.com">info@amanvirlegal.com</a></p>
-            </div>
-            <div class="info-box">
-                <h4>📍 Area Served</h4>
-                <p>All of Ontario, Canada</p>
-            </div>
-            <div class="info-box">
-                <h4>🕐 Hours</h4>
-                <p>Monday – Saturday: 9AM – 7PM</p>
-            </div>
-            <div class="info-box">
-                <h4>⚖️ Credentials</h4>
-                <p>Licensed Paralegal & Notary Public, Province of Ontario</p>
-            </div>
-        </div>
-
-        <form class="contact-form" action="#" method="post" aria-label="Contact Form">
-            <input type="text" name="fullname" placeholder="Full Name" required aria-label="Full Name">
-            <input type="email" name="email" placeholder="Email Address" required aria-label="Email Address">
-            <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone Number">
-            <select name="service" aria-label="Service Required">
-                <option value="" disabled selected>Select Service Required</option>
-                <option value="traffic-ticket">Traffic Ticket</option>
-                <option value="cvor">CVOR Violation</option>
-                <option value="impaired">Impaired Driving / DUI</option>
-                <option value="criminal">Other Criminal Charge</option>
-                <option value="notary">Notary Public</option>
-                <option value="other">Other / Not Sure</option>
-            </select>
-            <textarea name="message" rows="5" placeholder="Briefly describe your situation..." aria-label="Message"></textarea>
-            <button type="submit">Send Consultation Request</button>
-        </form>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-brand">AMANVIR GILL</div>
-    <p>© 2024 Amanvir Gill Legal Services. All Rights Reserved. | Licensed Paralegal & Notary Public, Ontario</p>
-    <nav class="footer-links" aria-label="Footer Navigation">
-        <a href="#home">Home</a>
-        <a href="#traffic-tickets">Traffic</a>
-        <a href="#cvor">CVOR</a>
-        <a href="#criminal">Criminal</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</footer>
-
-</body>
-</html>
+<!-- ═════
