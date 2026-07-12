@@ -516,7 +516,7 @@
           </div>
         </div>
 
-        <form class="contact-form" action="#" method="post" aria-label="Contact form">
+        <form class="contact-form" id="enquiryForm" aria-label="Contact form">
           <div class="form-row">
             <div>
               <label for="fullname">Full name</label>
@@ -540,7 +540,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="4" placeholder="Briefly describe your situation"></textarea>
           <button type="submit">Send Consultation Request</button>
-          <p class="form-note">Submitting this form does not create a paralegal-client relationship.</p>
+          <p class="form-note" id="formStatus">Submitting this form does not create a paralegal-client relationship.</p>
         </form>
       </div>
     </div>
@@ -602,6 +602,35 @@
       closeMobile();
     });
   });
+
+  // Contact form: build a mailto link from the fields and open the visitor's email app
+  const enquiryForm = document.getElementById('enquiryForm');
+  const formStatus = document.getElementById('formStatus');
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const fullname = enquiryForm.fullname.value.trim();
+      const phone = enquiryForm.phone.value.trim();
+      const email = enquiryForm.email.value.trim();
+      const service = enquiryForm.service.options[enquiryForm.service.selectedIndex]?.text || '';
+      const message = enquiryForm.message.value.trim();
+
+      const subject = `Consultation request: ${service || 'General enquiry'}`;
+      const body =
+        `Name: ${fullname}\n` +
+        `Phone: ${phone || 'Not provided'}\n` +
+        `Email: ${email}\n` +
+        `Service: ${service}\n\n` +
+        `Message:\n${message || 'Not provided'}`;
+
+      const mailtoLink = `mailto:info@amanvirlegal.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+
+      formStatus.textContent = "Your email app should now open with this enquiry pre-filled — just hit send.";
+      formStatus.style.color = '#2e7d32';
+    });
+  }
 
   // Generic smooth scroll for remaining anchor links (accounts for fixed header)
   document.querySelectorAll('a[href^="#"]:not([data-tab-target])').forEach(a=>{
